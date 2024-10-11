@@ -48,12 +48,14 @@ class CN0583:
                 timeout = self.timeout,
                 bytesize = self.bytesize)
             
-            self.ser.open()
+            #self.ser.open()
 
             if self.ser.in_waiting > 0:
                 serialString = self.ser.readline()
                 line = serialString.decode("Ascii")
                 print(line)
+            print("connected!")
+            
         except Exception as e:
             print(e)
             print("Serial error!")
